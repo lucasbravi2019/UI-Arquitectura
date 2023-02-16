@@ -65,8 +65,8 @@ const FormBudgetMaterial = ({ initialValues, onSubmit, budgets, materials, packa
                         }
                     </section>
                     <section className="form__field">
-                        <label htmlFor="ingredientId">Nombre material</label>
-                        <Field name="ingredientId" as="select">
+                        <label htmlFor="materialId">Nombre material</label>
+                        <Field name="materialId" as="select">
                             <option value="" disabled>-- Seleccione un material --</option>
                             {
                                 materials.map(material => (

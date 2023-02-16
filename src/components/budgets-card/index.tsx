@@ -16,7 +16,7 @@ const BudgetsCard = ({ budget, updatable, deletable, setValue, setUpdating }:
     const budgetCardButtons = () => (
         <section className="recipe-card__buttons">
             <NavigationButton
-                link={`/recipe-show/${budget.id}`}
+                link={`/budget-show/${budget.id}`}
                 routeName="Ver Presupuesto"
                 className="navigation-bar__link"
             />
@@ -50,7 +50,7 @@ const BudgetsCard = ({ budget, updatable, deletable, setValue, setUpdating }:
 
             <h3 className="recipe-card__title"><strong>Receta:</strong> {budget.name}</h3>
             {budget.price && budget.price > 0 ? (
-                <p className="recipe-card__paragraph"><strong>Precio: </strong>$ {budget.price?.toFixed(2)} (x3)</p>
+                <p className="recipe-card__paragraph"><strong>Precio: </strong>$ {budget.price?.toFixed(2)}</p>
             ) : (
                 <p className="recipe-card__paragraph"><strong>Precio: </strong>$ 0</p>
             )}

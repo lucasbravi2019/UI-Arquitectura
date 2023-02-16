@@ -1,12 +1,13 @@
 .material__item {
     padding: 10px;
+    width: 100%;
     border: 2px solid gray;
     border-radius: 5px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 10px;
+    margin-bottom: 10px;
 
     & button.card__delete-button {
         margin-top: auto;

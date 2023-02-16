@@ -48,14 +48,14 @@ export function* addDimensionSaga(action: any): Generator<any> {
         yield put(resetMessages())
         const response: any = yield call(postData, endpoints.createDimension, action.payload)
         if (response.error) {
-            yield put(setErrorMessage('El envase no se pudo crear'))
+            yield put(setErrorMessage('La dimension no se pudo crear'))
         } else {
-            yield put(setSuccessMessage('El envase fue creado con éxito'))
+            yield put(setSuccessMessage('La dimension fue creado con éxito'))
             yield put(addDimension(response.body))
         }
     } catch (error) {
         console.log(error);
-        yield put(setErrorMessage('El envase no se pudo crear'))
+        yield put(setErrorMessage('La dimension no se pudo crear'))
     }
 }
 
@@ -64,13 +64,13 @@ export function* deleteDimensionSaga(action: any): Generator<any> {
         const packageId = action.payload
         const deletePackageResponse: any = yield call(deleteData, endpoints.deleteDimension(packageId))
         if (deletePackageResponse.error) {
-            yield put(setErrorMessage('No se pudo borrar el envase'))
+            yield put(setErrorMessage('No se pudo borrar la dimension'))
             return
         }
         yield put(removeDimension(packageId))
     } catch (error) {
         console.log(error);
-        yield put(setErrorMessage('No se pudo borrar el envase'))
+        yield put(setErrorMessage('No se pudo borrar la dimension'))
     }
 }
 
@@ -79,16 +79,16 @@ export function* changeDimensionPriceSaga(action: any): Generator<any> {
         const price: DimensionPrice = {
             price: action.payload.price
         }
-        const response: any = yield call(putData, endpoints.changeMaterialDimensionPrice(action.payload.packageId), price)
+        const response: any = yield call(putData, endpoints.changeMaterialDimensionPrice(action.payload.dimensionId), price)
         if (response.error) {
-            yield put(setErrorMessage('No se pudo cambiar el precio del envase'))
+            yield put(setErrorMessage('No se pudo cambiar el precio la dimension'))
         } else {
             yield put(setSuccessMessage('Se cambió el precio con éxito'))
             yield put(removeMaterial(response.body.id))
             yield put(addMaterial(response.body))
         }
     } catch (error) {
-        yield put(setErrorMessage('No se pudo cambiar el precio del envase'))
+        yield put(setErrorMessage('No se pudo cambiar el precio la dimension'))
     }
 }
 

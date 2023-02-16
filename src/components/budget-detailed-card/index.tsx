@@ -24,7 +24,7 @@ const BudgetDetailedCard = ({ budget }: { budget: Budget }) => {
                 <p className="recipe-detailed-card__paragraph">Este presupuesto no tiene materiales</p>
             )}
             {budget.price ? (
-                <p className="recipe-detailed-card__paragraph"><strong>Precio: </strong>$ {budget.price.toFixed(2)} (x3)</p>
+                <p className="recipe-detailed-card__paragraph"><strong>Precio: </strong>$ {budget.price.toFixed(2)}</p>
             ) : (
                 <p className="recipe-detailed-card__paragraph">Este presupuesto no tiene precio total</p>
             )}

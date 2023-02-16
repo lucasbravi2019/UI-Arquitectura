@@ -17,8 +17,8 @@ import {
 
 export function* addMaterialToBudget(action: any): Generator<any> {
   try {
-    const budgetId = action.payload.recipeId
-    const materialIdId = action.payload.ingredientId
+    const budgetId = action.payload.budgetId
+    const materialIdId = action.payload.materialId
 
     const body: MaterialDetails = {
       metric: action.payload.metric,

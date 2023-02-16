@@ -24,18 +24,18 @@ const DimensionPage = () => {
         dispatch(runLoadDimensions())
     }, [])
 
-    const handleCreatePackage = (envase: any) => dispatch(runAddDimension(envase))
+    const handleCreateDimension = (envase: any) => dispatch(runAddDimension(envase))
 
     return (
         <section>
             <h1>Crear Envase</h1>
             <FormCreatePackage
                 initialValues={{ metric: '', quantity: 0 }}
-                onSubmit={handleCreatePackage}
+                onSubmit={handleCreateDimension}
             />
             {
                 dimensionSelector.length === 0 && (
-                    <h3>No hay Envases</h3>
+                    <h3>No hay Dimensiones</h3>
                 )
             }
             {

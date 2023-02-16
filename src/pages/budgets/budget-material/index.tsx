@@ -22,10 +22,10 @@ import {
     runLoadMaterials,
 } from '../../../redux/reducers/materialSlice'
 
-const getPackageByIngredientId = (ingredientId: string, ingredients: MaterialMultiDimension[]) => {
-    const ingredient = ingredients.filter(ingrediente => ingrediente.id === ingredientId)
-    if (ingredient.length > 0 && ingredient[0].dimensions) {
-        return ingredient[0].dimensions.map(dimension => {
+const getDimensionByMaterialId = (materialId: string, materials: MaterialMultiDimension[]) => {
+    const materialsFiltered = materials.filter(material => material.id === materialId)
+    if (materialsFiltered.length > 0 && materialsFiltered[0].dimensions) {
+        return materialsFiltered[0].dimensions.map(dimension => {
             return {
                 id: `${dimension.quantity} ${dimension.metric}`,
                 name: `${dimension.quantity} ${dimension.metric}`
@@ -62,7 +62,7 @@ const BudgetMaterialPage = () => {
                 initialValues={initialValues}
                 onSubmit={handleSubmit}
                 budgets={budgetSelector}
-                packageSelector={getPackageByIngredientId}
+                packageSelector={getDimensionByMaterialId}
             />
             <MessagePopup />
         </section>

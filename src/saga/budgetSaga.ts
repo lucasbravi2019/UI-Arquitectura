@@ -56,13 +56,13 @@ export function* createBudgetSaga(action: any): Generator<any> {
     yield put(resetMessages())
     const response: any = yield call(postData, endpoints.createBudget, action.payload)
     if (response.error) {
-      yield put(setErrorMessage('La receta no se pudo crear'))
+      yield put(setErrorMessage('El presupuesto no se pudo crear'))
     } else {
       yield put(addBudget(response.body))
-      yield put(setSuccessMessage('La receta fue creada con éxito'))
+      yield put(setSuccessMessage('El presupuesto fue creado con éxito'))
     }
   } catch (error) {
-    yield put(setErrorMessage('La receta no se pudo crear'))
+    yield put(setErrorMessage('El presupuesto no se pudo crear'))
   }
 }
 
@@ -71,13 +71,13 @@ export function* deleteBudgetSaga(action: any): Generator<any> {
     yield put(resetMessages())
     const response: any = yield call(deleteData, endpoints.deleteBudget(action.payload))
     if (response.error) {
-      yield put(setErrorMessage('La receta no se pudo borrar'))
+      yield put(setErrorMessage('El presupuesto no se pudo borrar'))
     } else {
       yield put(removeBudget(action.payload))
-      yield put(setSuccessMessage('La receta fue borrada con éxito'))
+      yield put(setSuccessMessage('El presupuesto fue borrado con éxito'))
     }
   } catch (error) {
-    yield put(setErrorMessage('La receta no se pudo borrar'))
+    yield put(setErrorMessage('El presupuesto no se pudo borrar'))
   }
 }
 
@@ -86,14 +86,14 @@ export function* updateBudgetSaga(action: any): Generator<any> {
     yield put(resetMessages())
     const response: any = yield call(putData, endpoints.updateBudget(action.payload.id), action.payload)
     if (response.error) {
-      yield put(setErrorMessage('La receta no se pudo editar'))
+      yield put(setErrorMessage('El presupuesto no se pudo editar'))
     } else {
       yield put(removeBudget(action.payload.id))
       yield put(addBudget(response.body))
-      yield put(setSuccessMessage('La receta se pudo editar correctamente'))
+      yield put(setSuccessMessage('El presupuesto se pudo editar correctamente'))
     }
   } catch (error) {
-    yield put(setErrorMessage('La receta no se pudo editar'))
+    yield put(setErrorMessage('El presupuesto no se pudo editar'))
   }
 }
 
