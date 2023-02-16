@@ -1,0 +1,9 @@
+.material__container {
+    margin-bottom: 20px;
+
+    @media (min-width: 1600px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}

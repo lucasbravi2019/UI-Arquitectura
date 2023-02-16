@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navigation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.navigation-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: none;
+    margin-top: 100px;
+    background-color: white;
+    box-shadow: none;
+    height: 100%;
+    line-height: normal;
+    padding: 10px 50px 10px 10px;
+
+    &__link {
+        color: rgb(122, 122, 122);
+    }
+
+    &__link:hover {
+        color: rgb(0, 0, 0);
+    }
+}

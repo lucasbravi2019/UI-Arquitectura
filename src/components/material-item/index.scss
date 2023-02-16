@@ -1,0 +1,33 @@
+.material__item {
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+
+    & button.card__delete-button {
+        margin-top: auto;
+    }
+}
+
+
+.material-dimension__title {
+    align-self: center;
+}
+
+.material-dimension__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+}
+
+.button-grid__container {
+    max-width: max-content;
+    margin: auto auto 10px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
